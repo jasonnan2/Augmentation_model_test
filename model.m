@@ -7,6 +7,7 @@ function accuracy=model(training_set, testing_set)
     test_input=prepare_input_dataset(testing_set(:,1:end-1));
     test_output=prepare_output_dataset(testing_set(:,end));
     
+    
 
     % Initialize network
     n_hidden = 2;
