@@ -10,14 +10,14 @@ function accuracy=model(training_set, testing_set)
     
 
     % Initialize network
-    n_hidden = 5;
-    n_inputs= 3;
+    n_hidden = 8;
+    n_inputs= 8;
     n_outputs= 8;
     net=initialize_network(n_inputs,n_hidden,n_outputs);
 
 
     % Set training parameters
-    l_rate = 0.3; n_epoch = 200;
+    l_rate = 20; n_epoch = 200;
     [net] = train_network(net, train_input, train_output, l_rate, n_epoch);
 
     for j=1:size(test_output,1)

@@ -32,8 +32,8 @@ function [clean_data,shift_data,pp_test]=shift(index,train_trial,Xplan)
     
     
     rng(0)
-    [coeff,score,pcvar,mu,v,S] = ppca(combined_count,3);
-    clean_coeff = ppca(clean_combined,3);
+    [coeff,score,pcvar,mu,v,S] = ppca(combined_count,8);
+    clean_coeff = ppca(clean_combined,8);
     
     clean_data=clean_combined*clean_coeff;
     clean_data(:,end+1)=clean_labels;

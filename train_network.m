@@ -29,15 +29,15 @@ for e=1:n_epoch
         
     end
     % new code
-    q_error(e) = sum_error 
+    q_error(e) = sum_error; 
     d_error = 1;
-    %disp(['Epoch: ' num2str(e) ', l_rate=' num2str(l_rate) ', error=' num2str(sum_error)]);
+    disp(['Epoch: ' num2str(e) ', l_rate=' num2str(l_rate) ', error=' num2str(sum_error)]);
     if e >=2
     d_error=abs(q_error(e-1)-q_error(e))/q_error(e-1);
     end
-    disp(['Epoch: ' num2str(e) ', l_rate=' num2str(l_rate) ', percent change=' num2str(100*d_error)]);
+    %disp(['Epoch: ' num2str(e) ', l_rate=' num2str(l_rate) ', percent change=' num2str(100*d_error)]);
     if e>=4 && d_error < .01
-        break
+        %break
     end
     end
     
