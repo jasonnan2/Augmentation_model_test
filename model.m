@@ -10,8 +10,8 @@ function accuracy=model(training_set, testing_set)
 
     % Initialize network
     n_hidden = 2;
-    n_inputs=size(data_input,2);
-    n_outputs=size(data_output,2);
+    n_inputs= 3;
+    n_outputs= 8;
     net=initialize_network(n_inputs,n_hidden,n_outputs);
 
 
