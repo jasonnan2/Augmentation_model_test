@@ -36,7 +36,7 @@ for e=1:n_epoch
     d_error=abs(q_error(e-1)-q_error(e))/q_error(e-1);
     end
     disp(['Epoch: ' num2str(e) ', l_rate=' num2str(l_rate) ', percent change=' num2str(100*d_error)]);
-    if e>=4 && d_error < .01
+    if e>=4 && d_error < .0001
         break
     end
     end
