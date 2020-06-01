@@ -1,6 +1,12 @@
-function accuracy=model(data_input,data_output)
+function accuracy=model(training_set, testing_set)
     rng(0) % comment out the rng seed so we can get true cross-validation
-
+    
+    training_input=training_set(:,1:end-1);
+    training_output=trainig_set(:,end);
+    
+    testing_input=testing_set(:,1:end-1);
+    testing_output=testing_set(:,end);
+    
     % Change for different type of data
     data_input=
     [data_input]=prepare_input_dataset(data_input);
