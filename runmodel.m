@@ -2,6 +2,7 @@
 
 % each value is the number of training samples out of the 91 total samples that
 % we select for
+load('neural_data.mat')
 tests = [12, 25, 37, 50, 62, 75, 87];
 accuracy = zeros([7,3]); % preallocate space
 
