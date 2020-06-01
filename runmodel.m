@@ -9,7 +9,7 @@ accuracy = zeros([7,3]); % preallocate space
 for v = 1:3
     for i = 1:7
         indicies = selection(tests(i)); 
-        [shift_data, pp_test] = shift(indicies,train_trial,Xplan);
+        [clean_data,shift_data,pp_test]=shift(indicies,train_trial,Xplan);
         accuracy = model(shift_data, pp_test);
         accuracy(i,v) = accuracy;
     end
