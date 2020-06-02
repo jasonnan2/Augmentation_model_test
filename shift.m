@@ -3,7 +3,7 @@ function [clean_data,shift_data,pp_test]=shift(index,train_trial,Xplan)
     K=4;D=97;L=length(index);inc=15;rate=floor(150/15);N=rate*L;
     train_hold=zeros(D,200,N,K);
     clean_hold=zeros(D,200,L,K);
-    for k=1:K
+    for k=1:2:2*K
         for l=1:L
             clean_hold(:,:,l,k)=train_trial(index(l),k).spikes(:,351:550);
             for r=1:rate
