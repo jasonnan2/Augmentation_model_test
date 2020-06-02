@@ -4,13 +4,13 @@
 % we select for
 load('neural_data.mat')
 tests = [12, 25, 37, 50, 62, 75, 87];
-accuracy = zeros([7,3]); % preallocate space
+accuracy_mat = zeros([7,3]); % preallocate space
 
 for v = 1:3
     for i = 1:7
         indicies = selection(tests(i)); 
-        [clean_data,shift_data,pp_test]=shift(indicies,train_trial,Xplan);
-        accuracy = model(shift_data, pp_test);
-        accuracy(i,v) = accuracy;
+        [clean_data,shift_data,pp_test]=shift_reg(indicies,train_trial,Xplan);
+        accuracy= model(shift_data, pp_test)
+        accuracy_mat(i,v) = accuracy;
     end
 end
