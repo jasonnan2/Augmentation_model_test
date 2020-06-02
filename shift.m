@@ -37,9 +37,11 @@ function [clean_data,shift_data,pp_test]=shift(index,train_trial,Xplan)
     
     clean_data=clean_combined*clean_coeff;
     clean_data(:,end+1)=clean_labels;
+    clean_data=clean_data(randperm(K*L),:);
     
     shift_data=combined_count*coeff;
     shift_data(:,end+1)=train_labels;
+    shift_data=shift_data(randperm(K*N),:);
     
     pp_test=Xplan(1:K*91,:)*coeff;
     pp_test(:,end+1)=test_labels;
