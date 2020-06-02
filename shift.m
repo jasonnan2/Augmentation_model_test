@@ -44,11 +44,11 @@ function [clean_data,shift_data,pp_test]=shift(index,train_trial,Xplan)
     shift_data(:,end+1)=train_labels;
     shift_data=shift_data(randperm(K*N),:);
     
-    a=1:91;b=[a;a;a;a];c=b.*[1:2:8]';
-    c=reshape(c,1,K*91);
+    a=1:91;b=[a;a+2*91;a+4*91;a+6*91];
+    b=reshape(b,1,K*91);
     pp_test=Xplan*coeff;
     pp_test(:,end+1)=test_labels;
-    pp_test=pp_test(c,:);
+    pp_test=pp_test(b,:);
     
 end
 
