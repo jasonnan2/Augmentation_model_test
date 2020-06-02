@@ -25,8 +25,8 @@ function [clean_data,shift_data,pp_test]=shift(index,train_trial,Xplan)
     train_labels=ones(K,N).*[1:K]';
     train_labels=reshape(train_labels',N*K,1);
     
-    test_labels=ones(K,91).*[1:K]';
-    test_labels=reshape(test_labels',K*91,1);
+    test_labels=ones(8,91).*[1:8]';
+    test_labels=reshape(test_labels',8*91,1);
     
     clean_labels=ones(K,L).*[1:K]';
     clean_labels=reshape(clean_labels',L*K,1);
@@ -44,8 +44,11 @@ function [clean_data,shift_data,pp_test]=shift(index,train_trial,Xplan)
     shift_data(:,end+1)=train_labels;
     shift_data=shift_data(randperm(K*N),:);
     
-    pp_test=Xplan(1:K*91,:)*coeff;
+    a=1:91;b=[a;a;a;a];c=b.*[1:2:8]';
+    c=reshape(c,1,K*91);
+    pp_test=Xplan*coeff;
     pp_test(:,end+1)=test_labels;
+    pp_test=pp_test(c,:);
     
 end
 
