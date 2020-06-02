@@ -1,4 +1,4 @@
-function [clean_data,shift_data,pp_test]=shiftreg(index,train_trial,Xplan)
+function [clean_data,shift_data,pp_test]=shift_reg(index,train_trial,Xplan)
     % p_test is our testing set
     K=4;D=97;L=length(index);inc=15;rate=floor(150/15);N=rate*L;
     
